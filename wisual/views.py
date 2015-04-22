@@ -6,3 +6,6 @@ from flask import render_template
 def index():
 	return render_template('index.html')
 
+@g_app.route("/psnr")
+def computePsnr():
+	return render_template('psnr.html')

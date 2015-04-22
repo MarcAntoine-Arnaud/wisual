@@ -3,3 +3,23 @@ body{
 	background-color: #040404;
 	color: #d0d0d0;
 }
+
+a{
+	text-decoration: none;
+	color:#fff !important;
+}
+
+.form div{
+	padding-top: 5px;
+}
+
+.form div label{
+	width: 150px;
+	display: inline-block;
+}
+
+.form div input{
+	border-radius: 3px;
+	padding: 4px;
+	width: 50vw;
+}
