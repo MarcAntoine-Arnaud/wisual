@@ -2,29 +2,41 @@
 <head>
   <title>Wisual - psnr</title>
   <link href={{url_for('static', filename='css/main.css')}} rel="stylesheet" type="text/css" />
+  <script src={{url_for('static', filename='js/jquery-2.1.3.min.js')}} ></script>
+  <script src={{url_for('static', filename='js/psnr.js')}}></script>
 </head>
 <body>
   <center><h1>PSNR processor</h1></center>
   <div class="form">
     <div>
       <label>Reference File</label>
-      <input type="text" autocomplete="on"/>
+      <input class="inputFile" type="text" list="files1" autocomplete="on"/>
+      <datalist id="files1">
+      </datalist>
     </div>
     <div>
       <label>Comparison File 1</label>
-      <input type="text" autocomplete="on"/>
+      <input class="inputFile" type="text" list="files2" autocomplete="on"/>
+      <datalist id="files2">
+      </datalist>
     </div>
     <div>
       <label>Comparison File 2</label>
-      <input type="text" autocomplete="on"/>
+      <input class="inputFile" type="text" list="files3" autocomplete="on"/>
+      <datalist id="files3">
+      </datalist>
     </div>
     <div>
       <label>Comparison File 3</label>
-      <input type="text" autocomplete="on"/>
+      <input class="inputFile" type="text" list="files4" autocomplete="on"/>
+      <datalist id="files4">
+      </datalist>
     </div>
     <div>
       <label>Comparison File 4</label>
-      <input type="text" autocomplete="on"/>
+      <input class="inputFile" type="text" list="files5" autocomplete="on"/>
+      <datalist id="files5">
+      </datalist>
     </div>
     <div>
       <label>Comparison File 5</label>
