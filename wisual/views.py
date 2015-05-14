@@ -1,6 +1,6 @@
 
 import os
-
+import xmltodict
 from wisual import g_app
 from flask import render_template
 from flask import jsonify, abort
@@ -29,3 +29,16 @@ def ls(path):
 	except:
 		abort(404)
 	return jsonify({"files":files, "directories": dirs, "path":path})
+
+@g_app.route("/results")
+def getResultsList():
+	files = os.listdir("results")
+	print files
+	return jsonify({"files":files})
+
+@g_app.route("/results/<path:path>")
+def getResult(path):
+	f = open( os.path.join("results", path), 'r')
+	output = xmltodict.parse(f, process_namespaces=False)
+	f.close()
+	return jsonify(**output)
