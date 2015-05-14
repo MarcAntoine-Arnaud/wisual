@@ -18,8 +18,25 @@ a{
 	display: inline-block;
 }
 
-.form div input{
+.form div input[type=text]{
 	border-radius: 3px;
 	padding: 4px;
 	width: 50vw;
+	background-color: #333;
+	border: none;
+	color: #fff;
+}
+
+.form div:first-child input[type=text]{
+	background-color: #555;
+}
+
+input[type=submit]{
+	position: absolute;
+	right:10%;
+	background-color: #0DDF0D;
+	border: none;
+	border-radius: 4px;
+	padding:10px;
+	cursor: pointer;
 }
