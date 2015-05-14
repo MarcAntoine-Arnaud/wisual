@@ -13,6 +13,10 @@ def index():
 def computePsnr():
 	return render_template('psnr.html')
 
+@g_app.route("/ssim")
+def computeSsim():
+	return render_template('ssim.html')
+
 @g_app.route("/ls/<path:path>")
 def ls(path):
 	files = []
