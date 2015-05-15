@@ -59,21 +59,41 @@
         box-shadow: 0 0 10px #008C9E;
     }
     a{
-        text-decoration: none;
-        color:#fff !important;
-    }
-    .form div{
-        padding-top: 5px;
-    }
-    .form div label{
-        width: 150px;
-        display: inline-block;
-    }
-    .form div input{
-        border-radius: 3px;
-        padding: 4px;
-        width: 80%;
-    }
+	text-decoration: none;
+	color:#fff !important;
+	}
+	
+	.form div{
+		padding-top: 5px;
+	}
+	
+	.form div label{
+		width: 150px;
+		display: inline-block;
+	}
+	
+	.form div input[type=text]{
+		border-radius: 3px;
+		padding: 4px;
+		width: 50vw;
+		background-color: #333;
+		border: none;
+		color: #fff;
+	}
+	
+	.form div:first-child input[type=text]{
+		background-color: #555;
+	}
+	
+	input[type=submit]{
+		position: absolute;
+		right:10%;
+		background-color: #0DDF0D;
+		border: none;
+		border-radius: 4px;
+		padding:10px;
+		cursor: pointer;
+	}
 }
 @media screen and (min-width:500px) and (max-width:1070px)
 {
@@ -130,21 +150,41 @@
         box-shadow: 0 0 10px #008C9E;
     }
     a{
-        text-decoration: none;
-        color:#fff !important;
-    }
-    .form div{
-        padding-top: 5px;
-    }
-    .form div label{
-        width: 150px;
-        display: inline-block;
-    }
-    .form div input{
-        border-radius: 3px;
-        padding: 4px;
-        width: 75vw;
-    }
+	text-decoration: none;
+	color:#fff !important;
+	}
+	
+	.form div{
+		padding-top: 5px;
+	}
+	
+	.form div label{
+		width: 150px;
+		display: inline-block;
+	}
+	
+	.form div input[type=text]{
+		border-radius: 3px;
+		padding: 4px;
+		width: 50vw;
+		background-color: #333;
+		border: none;
+		color: #fff;
+	}
+	
+	.form div:first-child input[type=text]{
+		background-color: #555;
+	}
+	
+	input[type=submit]{
+		position: absolute;
+		right:10%;
+		background-color: #0DDF0D;
+		border: none;
+		border-radius: 4px;
+		padding:10px;
+		cursor: pointer;
+	}
 }
 @media screen and (max-width:500px)
 {
@@ -202,19 +242,39 @@
         box-shadow: 0 0 10px #008C9E;
     }
     a{
-        text-decoration: none;
-        color:#fff !important;
-    }
-    .form div{
-        padding-top: 5px;
-    }
-    .form div label{
-        width: 150px;
-        display: inline-block;
-    }
-    .form div input{
-        border-radius: 3px;
-        padding: 4px;
-        width: 75vw;
-    }
+	text-decoration: none;
+	color:#fff !important;
+	}
+	
+	.form div{
+		padding-top: 5px;
+	}
+	
+	.form div label{
+		width: 150px;
+		display: inline-block;
+	}
+	
+	.form div input[type=text]{
+		border-radius: 3px;
+		padding: 4px;
+		width: 50vw;
+		background-color: #333;
+		border: none;
+		color: #fff;
+	}
+	
+	.form div:first-child input[type=text]{
+		background-color: #555;
+	}
+	
+	input[type=submit]{
+		position: absolute;
+		right:10%;
+		background-color: #0DDF0D;
+		border: none;
+		border-radius: 4px;
+		padding:10px;
+		cursor: pointer;
+	}
 }
