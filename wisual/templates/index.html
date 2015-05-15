@@ -1,13 +1,28 @@
-<html>
+<!DOCTYPE HTML>
 <head>
-  <title>Wisual</title>
-  <link href={{url_for('static', filename='css/main.css')}} rel="stylesheet" type="text/css" />
+    <title>Wisual</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <link href={{url_for('static', filename='css/main.css')}} rel="stylesheet" type="text/css" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 </head>
 <body>
-  <center><h1>Wisual</h1></center>
-  <ul>
-  	<li><a href="/psnr">PSNR</a></li>
-  	<li><a href="/ssim">SSIM</a></li>
-  </ul>
+    <div class="corps">
+        <div id="header">
+            <center>
+                <h1>WISUAL</h1>
+            </center>
+            <a href="/psnr">
+                <div id="psnr" class="bouton">
+                    PSNR
+                </div>
+            </a>
+            <a href="/ssim">
+                <div id="ssim" class="bouton">
+                    SSIM
+                </div>
+            </a>
+        </div>
+        <div class="reste"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem. Ut turpis felis, pulvinar a semper sed, adipiscing id dolor. Pellentesque auctor nisi id magna consequat sagittis. Curabitur dapibus enim sit amet elit pharetra tincidunt feugiat nisl imperdiet. Ut convallis libero in urna ultrices accumsan. Donec sed odio eros. Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In rutrum accumsan ultricies. Mauris vitae nisi at sem facilisis semper ac in est.</p></div>
+    </div>
 </body>
 </html>
