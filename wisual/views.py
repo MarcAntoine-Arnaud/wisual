@@ -2,9 +2,7 @@
 import os
 import xmltodict
 from wisual import g_app
-from flask import render_template, jsonify
-from flask import render_template
-from flask import jsonify, abort
+from flask import render_template, jsonify, abort
 
 
 @g_app.route("/")
