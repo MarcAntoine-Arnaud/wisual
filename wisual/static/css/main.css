@@ -1,25 +1,220 @@
-
-body{
-	background-color: #040404;
-	color: #d0d0d0;
+@media screen and (min-width:1070px)
+{
+    body{
+        background-color: #343838;
+        color: #FFFFFF;
+        font-family: 'Open Sans', sans-serif;
+    }
+    .corps{
+        margin-left: auto;
+        margin-right: auto;
+        width: 960px;
+        height: 2800px;
+    }
+    #header{
+        position: relative;
+        height: 300px;
+        width: 100%;
+    }
+    #psnr{
+        position: absolute; 
+        left: 25%; 
+        margin-left: -150px;
+        height: 100px;
+        width: 100px;
+        font-size: 40px;
+        padding: 100px;
+        background-color: #00DFFC;
+        -moz-box-shadow: 0 0 10px #00B4CC;
+        -webkit-box-shadow: 0 0 10px #00B4CC;
+        box-shadow: 0 0 10px #00B4CC;
+    }
+    #ssim{
+        position: absolute; 
+        left: 75%; 
+        margin-left: -150px;
+        height: 100px;
+        width: 100px;
+        font-size: 40px;
+        padding: 100px;
+        background-color: #00DFFC;
+        -moz-box-shadow: 0 0 10px #00B4CC;
+        -webkit-box-shadow: 0 0 10px #00B4CC;
+        box-shadow: 0 0 10px #00B4CC;
+    }
+    .bouton:hover
+    {
+        background-color: #00B4CC;
+        text-shadow: 2px 2px 2px #005F6B;
+    }
+    .reste{
+        position: absolute;
+        top:400px;
+        width:860px;
+        height:2000px;
+        padding: 50px;
+        background-color: #005F6B;
+        -moz-box-shadow: 0 0 10px #008C9E;
+        -webkit-box-shadow: 0 0 10px #008C9E;
+        box-shadow: 0 0 10px #008C9E;
+    }
+    a{
+        text-decoration: none;
+        color:#fff !important;
+    }
+    .form div{
+        padding-top: 5px;
+    }
+    .form div label{
+        width: 150px;
+        display: inline-block;
+    }
+    .form div input{
+        border-radius: 3px;
+        padding: 4px;
+        width: 80%;
+    }
 }
-
-a{
-	text-decoration: none;
-	color:#fff !important;
+@media screen and (min-width:500px) and (max-width:1070px)
+{
+    body{
+        background-color: #343838;
+        color: #FFFFFF;
+        font-family: 'Open Sans', sans-serif;
+    }
+    .corps{
+        margin-left: auto;
+        margin-right: auto;
+        width: 90vw;
+    }
+    #psnr{
+        position: absolute; 
+        left: 28%; 
+        margin-left: -150px;
+        height: 100px;
+        width: 100px;
+        font-size: 40px;
+        padding: 100px;
+        background-color: #00DFFC;
+        -moz-box-shadow: 0 0 10px #00B4CC;
+        -webkit-box-shadow: 0 0 10px #00B4CC;
+        box-shadow: 0 0 10px #00B4CC;
+    }
+    #ssim{
+        position: absolute; 
+        left: 72%; 
+        margin-left: -150px;
+        height: 100px;
+        width: 100px;
+        font-size: 40px;
+        padding: 100px;
+        background-color: #00DFFC;
+        -moz-box-shadow: 0 0 10px #00B4CC;
+        -webkit-box-shadow: 0 0 10px #00B4CC;
+        box-shadow: 0 0 10px #00B4CC;
+    }
+    .bouton:hover
+    {
+        background-color: #00B4CC;
+        text-shadow: 2px 2px 2px #005F6B;
+    }
+    .reste{
+        position: absolute;
+        top:400px;
+        width:80%;
+        height:2000px;
+        padding: 5%;
+        background-color: #005F6B;
+        -moz-box-shadow: 0 0 10px #008C9E;
+        -webkit-box-shadow: 0 0 10px #008C9E;
+        box-shadow: 0 0 10px #008C9E;
+    }
+    a{
+        text-decoration: none;
+        color:#fff !important;
+    }
+    .form div{
+        padding-top: 5px;
+    }
+    .form div label{
+        width: 150px;
+        display: inline-block;
+    }
+    .form div input{
+        border-radius: 3px;
+        padding: 4px;
+        width: 75vw;
+    }
 }
-
-.form div{
-	padding-top: 5px;
-}
-
-.form div label{
-	width: 150px;
-	display: inline-block;
-}
-
-.form div input{
-	border-radius: 3px;
-	padding: 4px;
-	width: 50vw;
+@media screen and (max-width:500px)
+{
+    body{
+        background-color: #343838;
+        color: #FFFFFF;
+        font-family: 'Open Sans', sans-serif;
+    }
+    .corps{
+        margin-left: auto;
+        margin-right: auto;
+        width: 90vw;
+    }
+    #psnr{
+        position: absolute; 
+        left: 50%; 
+        margin-left: -150px;
+        height: 100px;
+        width: 100px;
+        font-size: 40px;
+        padding: 100px;
+        background-color: #00DFFC;
+        -moz-box-shadow: 0 0 10px #00B4CC;
+        -webkit-box-shadow: 0 0 10px #00B4CC;
+        box-shadow: 0 0 10px #00B4CC;
+    }
+    #ssim{
+        position: absolute; 
+        top: 400px;
+        left: 50%; 
+        margin-left: -150px;
+        height: 100px;
+        width: 100px;
+        font-size: 40px;
+        padding: 100px;
+        background-color: #00DFFC;
+        -moz-box-shadow: 0 0 10px #00B4CC;
+        -webkit-box-shadow: 0 0 10px #00B4CC;
+        box-shadow: 0 0 10px #00B4CC;
+    }
+    .bouton:hover
+    {
+        background-color: #00B4CC;
+        text-shadow: 2px 2px 2px #005F6B;
+    }
+    .reste{
+        position: absolute;
+        top:710px;
+        width:80%;
+        height:2000px;
+        padding: 5%;
+        background-color: #005F6B;
+        -moz-box-shadow: 0 0 10px #008C9E;
+        -webkit-box-shadow: 0 0 10px #008C9E;
+        box-shadow: 0 0 10px #008C9E;
+    }
+    a{
+        text-decoration: none;
+        color:#fff !important;
+    }
+    .form div{
+        padding-top: 5px;
+    }
+    .form div label{
+        width: 150px;
+        display: inline-block;
+    }
+    .form div input{
+        border-radius: 3px;
+        padding: 4px;
+        width: 75vw;
+    }
 }
