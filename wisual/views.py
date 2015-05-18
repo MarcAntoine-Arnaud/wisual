@@ -13,6 +13,10 @@ def index():
 def computePsnr():
 	return render_template('psnr.html')
 
+@g_app.route("/psnr2")
+def compute2Psnr():
+	return render_template('psnr2.html')
+
 @g_app.route("/ssim")
 def computeSsim():
 	return render_template('ssim.html')
