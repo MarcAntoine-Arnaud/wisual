@@ -11,42 +11,44 @@
     <center><h1>PSNR processor</h1></center>
     <canvas id="line" height="300" width="600"></canvas>
       <script type="text/javascript">
-          var req = new XMLHttpRequest();
-              req.open("GET", "/results/result.xml", true); 
-              req.onreadystatechange = resultats;   // la fonction de prise en charge
-              req.send(null);
-          
-          function resultats() 
-          { 
-                if (req.readyState == 4) 
-                    { 
-                    var doc = eval('(' + req.responseText + ')'); 
-                    }    
-          }
-          
-          //console.log(req.analyse.frame[0])
-          var lineChartData = {
-			labels : ["","","","","","",""],
-			datasets : [
-				{
-					fillColor : "rgba(220,220,220,0.5)",
-					strokeColor : "rgba(220,220,220,1)",
-					pointColor : "rgba(220,220,220,1)",
-					pointStrokeColor : "#fff",
-					data : [1,2,3,4,5,4,3,2,5]
-				},
-				{
-					fillColor : "rgba(151,187,205,0.5)",
-					strokeColor : "rgba(151,187,205,1)",
-					pointColor : "rgba(151,187,205,1)",
-					pointStrokeColor : "#fff",
-					data : [1,2,3,4,5,4,3,2,5]
-				}
-			]
-			
-		};
-        new Chart(document.getElementById("line").getContext("2d")).Line(lineChartData);
-            Chart.defaults.global.responsive = true;
+          $.ajax({
+                type: "GET",
+                url: "/results/result.xml"
+                })
+            .done(function(data){
+                console.log(data);
+                        //console.log(req.analyse.frame[0])
+                var curve1 =[];
+                $.each(data.analyse.frame,
+                function(index,frameData){
+                        curve1.push(frameData.result);
+
+                               //{console.log(frameData)}
+
+
+
+                          var lineChartData = {
+                            labels : ["","","","","","",""],
+                            datasets : [
+                                {
+                                    fillColor : "rgba(220,220,220,0.5)",
+                                    strokeColor : "rgba(220,220,220,1)",
+                                    pointColor : "rgba(220,220,220,1)",
+                                    pointStrokeColor : "#fff",
+                                    data : curve1
+                                }
+                            ]
+
+                        }
+                        new Chart(document.getElementById("line").getContext("2d")).Line(lineChartData);
+                        Chart.defaults.global.responsive = true;
+
+		      });
+        
+            })
+            .error(function(data){
+                console.log('POST ERROR !');
+            })
     </script>
 </div>
 </body>
