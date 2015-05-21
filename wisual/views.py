@@ -21,6 +21,10 @@ def compute2Psnr():
 def computeSsim():
 	return render_template('ssim.html')
 
+@g_app.route("/testarbo")
+def computeTestarbo():
+	return render_template('test_arbo.html')
+
 	
 @g_app.route("/test")
 def computeTest():
