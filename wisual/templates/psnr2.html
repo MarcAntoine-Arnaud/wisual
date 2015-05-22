@@ -17,18 +17,21 @@
                 })
             .done(function(data){
                 console.log(data);
-                        //console.log(req.analyse.frame[0])
+                        //console.log(req.analyse.frame[0])   // Mon echec
                 var curve1 =[];
-                $.each(data.analyse.frame,
+              //  var curve2 =[];
+                $.each(data.analyse.frame, 
                 function(index,frameData){
+                        //curve1 intègre les données de result
                         curve1.push(frameData.result);
-
+                       // curve2.push(frameData.result);     
+                    
                                //{console.log(frameData)}
 
-
+                        //Comment choisir le pas et intégrer légende?
 
                           var lineChartData = {
-                            labels : ["","","","","","",""],
+                            labels: ['','','','','Frames','','','','',''], // Le nombre de labels '' détermine la précision de la courbe
                             datasets : [
                                 {
                                     fillColor : "rgba(220,220,220,0.5)",
@@ -40,7 +43,9 @@
                             ]
 
                         }
-                        new Chart(document.getElementById("line").getContext("2d")).Line(lineChartData);
+                        new Chart(document.getElementById("line").getContext("2d")).Line(lineChartData, {
+                                                                                        
+                        });
                         Chart.defaults.global.responsive = true;
 
 		      });
