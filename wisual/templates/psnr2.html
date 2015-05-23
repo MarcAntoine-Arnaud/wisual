@@ -13,21 +13,27 @@
       <script type="text/javascript">
           $.ajax({
                 type: "GET",
-                url: "/results/result.xml"
+                url: "/results/result2.xml"
                 })
             .done(function(data){
                 console.log(data);
                         //console.log(req.analyse.frame[0])   // Mon echec
                 var curve1 =[];
-              //  var curve2 =[];
+                var curve2 =[];
+                var nbsources=[];  //Variable de boucle tant que contenant le nombre de courbe à construire
                 $.each(data.analyse.frame, 
                 function(index,frameData){
-                        //curve1 intègre les données de result
-                        curve1.push(frameData.result);
-                       // curve2.push(frameData.result);     
+                        //curve1 intègre les données du tableau result
+                        nbsources.push(frameData.result.length);
+                        for (i = 0; i < nbsources; i++) 
+                            { 
+                               console.log(i);
+                            } 
+                        curve1.push(frameData.result[0]);
+                        curve2.push(frameData.result[1]);     
                     
-                               //{console.log(frameData)}
-
+                              // console.log(frameData.result.length);
+                        //Trouver moyen d'insérer plus ou moins de datasets en fonction de la taille de result
                         //Comment choisir le pas et intégrer légende?
 
                           var lineChartData = {
@@ -39,8 +45,16 @@
                                     pointColor : "rgba(220,220,220,1)",
                                     pointStrokeColor : "#fff",
                                     data : curve1
+                                },
+                                {
+                                    fillColor : "rgba(153, 85, 221, 0.5)",
+                                    strokeColor : "rgb(79, 208, 255)",
+                                    pointColor : "rgba(220,220,220,1)",
+                                    pointStrokeColor : "#c4c8ff",
+                                    data : curve2
                                 }
                             ]
+                            
 
                         }
                         new Chart(document.getElementById("line").getContext("2d")).Line(lineChartData, {
