@@ -2,52 +2,59 @@ body{
     background-color: #343838;
     color: #FFFFFF;
     font-family: 'Open Sans', sans-serif;
+    margin: 0;
 }
-.corps{
-    margin-left: auto;
-    margin-right: auto;
+
+h1{
+    margin: 0;
+    padding: 10px;
+    padding-left: 40px;
 }
-.bouton:hover
-{
-    background-color: #00B4CC;
-    text-shadow: 2px 2px 2px #005F6B;
-}
-#psnr{
-        position: absolute; 
-        margin-left: -150px;
-        height: 100px;
-        width: 100px;
-        font-size: 40px;
-        padding: 100px;
-        background-color: #00DFFC;
-        -moz-box-shadow: 0 0 10px #00B4CC;
-        -webkit-box-shadow: 0 0 10px #00B4CC;
-        box-shadow: 0 0 10px #00B4CC;
-    }
-    #ssim{
-        position: absolute; 
-        margin-left: -150px;
-        height: 100px;
-        width: 100px;
-        font-size: 40px;
-        padding: 100px;
-        background-color: #00DFFC;
-        -moz-box-shadow: 0 0 10px #00B4CC;
-        -webkit-box-shadow: 0 0 10px #00B4CC;
-        box-shadow: 0 0 10px #00B4CC;
-    }
-    .reste{
-        position: absolute;
-        height:2000px;
-        background-color: #005F6B;
-        -moz-box-shadow: 0 0 10px #008C9E;
-        -webkit-box-shadow: 0 0 10px #008C9E;
-        box-shadow: 0 0 10px #008C9E;
-    }
+
 a{
-	text-decoration: none;
-	color:#fff !important;
-}	
+    text-decoration: none;
+    color:#fff !important;
+}
+
+#header{
+    position: fixed;
+    width: 100vw;
+    height: 80px;
+    background-color: #141818;
+}
+
+#leftPanel{
+    background-color: #242828;
+    position: fixed;
+    width: 200px;
+    top: 80px;
+    height: 100%;
+    margin: 0px;
+    padding: 3px;
+}
+
+#leftPanel li{
+    list-style-type: none;
+}
+
+#mainContent{
+    margin-left: 230px;
+    padding-top: 100px;
+}
+
+#rightPanel{
+    position: fixed;
+    right: 0px;
+    top: 80px;
+    background-color: #242828;
+    height: 100vh;
+    width: 300px;
+}
+
+#rightPanel h2{
+    padding: 10px;
+}
+	
 .form div{
 	padding-top: 5px;
 }	
@@ -58,7 +65,7 @@ a{
 .form div input[type=text]{
     border-radius: 3px;
 	padding: 4px;
-	width: 50vw;
+	width: 20vw;
 	background-color: #333;
 	border: none;
 	color: #fff;
@@ -78,59 +85,10 @@ input[type=submit]{
 
 @media screen and (min-width:1070px)
 {
-    .corps{
-        width: 960px;
-        height: 2800px;
-    }
-    #header{
-        position: relative;
-        height: 300px;
-        width: 100%;
-    }
-    #psnr{
-        left: 25%; 
-    }
-    #ssim{
-        left: 75%; 
-    }
-    .reste{
-        top: 400px;
-        width:860px;
-        padding: 50px;
-    }
 }
 @media screen and (min-width:500px) and (max-width:1070px)
 {
-    .corps{
-        width: 90vw;
-    }
-    #psnr{
-        left: 28%; 
-    }
-    #ssim{
-        left: 72%; 
-    }
-    .reste{
-        top:400px;
-        width:80%;
-        padding: 5%;
-    }
 }
 @media screen and (max-width:500px)
 {
-    .corps{
-        width: 90vw;
-    }
-    #psnr{
-        left: 50%; 
-    }
-    #ssim{
-        top: 400px;
-        left: 50%; 
-    }
-    .reste{
-        top:710px;
-        width:80%;
-        padding: 5%;
-    }
 }

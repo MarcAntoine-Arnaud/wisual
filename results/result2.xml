@@ -1,5 +1,5 @@
 <analyse type="psnr">
-<frame index="1"><result>148.131</result><result>148.131</result></frame>
+<frame index="1"><result>50.131</result><result>148.131</result></frame>
 <frame index="2"><result>41.2468</result><result>41.2468</result></frame>
 <frame index="3"><result>32.7583</result><result>32.7583</result></frame>
 <frame index="4"><result>28.6255</result><result>28.6255</result></frame>

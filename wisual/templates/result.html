@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block content %}
+<h2><a href="/results">View results</a> > {{resultFile}}</h2>
+<canvas id="graphResult" height="300px" width="400px"></canvas>
+
+<script type="text/javascript">
+$.ajax({
+	type: "GET",
+	url: "/results/{{resultFile}}/data"
+})
+.done(function(data){
+	console.log(data);
+	
+	var axisX = [];
+
+	// curves will store every points for the first comparison from result
+
+	var curves = [];
+	var datasets = [];
+	
+	if( jQuery.type( data.analyse.frame[0].result ) === "array" ){
+		$.each( data.analyse.frame[0].result, function( element ){
+			curves.push([]);
+		});
+	}else{
+		curves.push([]);
+	}
+
+	$.each(data.analyse.frame, function( index, frameData ){
+		axisX.push("");
+
+		if( jQuery.type( frameData.result ) === "array" ){
+			$.each( frameData.result, function( elementIndex, element ){
+				curves[elementIndex].push(element);
+			});
+		}else{
+			curves[0].push(frameData.result);
+		};
+	});
+
+	$.each( curves, function( curveElement, curve ){
+		datasets.push({
+			fillColor : "rgba(220,220,220,0.5)",
+			strokeColor : "rgba(220,220,220,1)",
+			pointColor : "rgba(220,220,220,1)",
+			pointStrokeColor : "#fff",
+			data : curve
+		});
+	});
+		
+	var lineChartData = {
+		labels: axisX,
+		datasets : datasets
+	};
+	console.log(datasets);
+	var canvas = document.getElementById("graphResult").getContext("2d");
+
+	chartStyle = {
+		animation: false
+	}
+
+	new Chart( canvas ).Line( lineChartData, chartStyle );
+	Chart.defaults.global.responsive = true;
+})
+.error(function(data){
+	console.log('ERROR: unable to retreive data for this result');
+})
+</script>
+
+{% endblock %}
