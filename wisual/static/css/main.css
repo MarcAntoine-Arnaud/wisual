@@ -171,7 +171,7 @@ input[type=radio] {
 }
 
 .roundedOne {
-    margin-left: 40px;
+    margin-left: 155px;
     width: 210px;
     height: 28px;
     background: #242828;
@@ -196,11 +196,11 @@ input[type=radio] {
     position: absolute;
     width: 200px !important;
     height: 20px;
-    text-indent: 40px;
+    text-indent: 30px;
 
     -webkit-border-radius: 50px;
     -moz-border-radius: 50px;
-    border-radius: 0px;
+    border-radius: 2px;
     left: 4px;
     top: 4px;
 }
@@ -223,13 +223,9 @@ input[type=radio] {
 
     -webkit-border-radius: 50px;
     -moz-border-radius: 50px;
-    border-radius: 0px;
+    border-radius: 2px;
     top: 2px;
     left: 2px;
-
-    -webkit-box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.3);
-    -moz-box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.3);
-    box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.3);
 }
 
 .roundedOne label:hover::after {
