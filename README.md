@@ -7,14 +7,14 @@ Web Service for Visual Quality Assessment
 Wisual is an engine to process analysis between media to evaluate theire similarity.
 
 Similarity can be process using some differents algorithms like:
-PSNR
-SSIM
-MS-SSIM
-VQM
-Blurring metric
-Blocking metric
-Drop frame metric
-Noise Estimation metric
-...
+* PSNR
+* SSIM
+* MS-SSIM
+* VQM
+* Blurring metric
+* Blocking metric
+* Drop frame metric
+* Noise Estimation metric
+* ...
 
 Wisual is an fully open-source service, which can be installed and used as a web service.
