@@ -6,16 +6,19 @@ from flask import render_template, jsonify, abort
 
 navigation = [
 	{
-		"caption": "New Job",
-		"href" : "/job"
+		"caption": "New analyse",
+		"href" : "/job",
+		"icon" : "arrow-circle-right"
 	},
 	{
-		"caption": "List Job",
-		"href" : "/jobs"
+		"caption": "List analysis",
+		"href" : "/jobs",
+		"icon" : "history"
 	},
 	{
 		"caption": "View Results",
-		"href" : "/results"
+		"href" : "/results",
+		"icon" : "bar-chart"
 	}
 ]
 
