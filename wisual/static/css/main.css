@@ -1,36 +1,78 @@
-
 body{
-	background-color: #040404;
-	color: #d0d0d0;
+    background-color: #343838;
+    color: #FFFFFF;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+}
+
+h1{
+    margin: 0;
+    padding: 10px;
+    padding-left: 40px;
 }
 
 a{
-	text-decoration: none;
-	color:#fff !important;
+    text-decoration: none;
+    color:#fff !important;
 }
 
+#header{
+    position: fixed;
+    width: 100vw;
+    height: 80px;
+    background-color: #141818;
+}
+
+#leftPanel{
+    background-color: #242828;
+    position: fixed;
+    width: 200px;
+    top: 80px;
+    height: 100%;
+    margin: 0px;
+    padding: 3px;
+}
+
+#leftPanel li{
+    list-style-type: none;
+}
+
+#mainContent{
+    margin-left: 230px;
+    padding-top: 100px;
+}
+
+#rightPanel{
+    position: fixed;
+    right: 0px;
+    top: 80px;
+    background-color: #242828;
+    height: 100vh;
+    width: 300px;
+}
+
+#rightPanel h2{
+    padding: 10px;
+}
+	
 .form div{
 	padding-top: 5px;
-}
-
+}	
 .form div label{
 	width: 150px;
 	display: inline-block;
 }
-
 .form div input[type=text]{
-	border-radius: 3px;
+    border-radius: 3px;
 	padding: 4px;
-	width: 50vw;
+	width: 20vw;
 	background-color: #333;
 	border: none;
 	color: #fff;
 }
-
 .form div:first-child input[type=text]{
 	background-color: #555;
 }
-
 input[type=submit]{
 	position: absolute;
 	right:10%;
@@ -39,4 +81,14 @@ input[type=submit]{
 	border-radius: 4px;
 	padding:10px;
 	cursor: pointer;
+}
+
+@media screen and (min-width:1070px)
+{
+}
+@media screen and (min-width:500px) and (max-width:1070px)
+{
+}
+@media screen and (max-width:500px)
+{
 }

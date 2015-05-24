@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<ul>
+	<div class="form">
+		<div>
+			<label>Reference File</label>
+			<input class="inputFile" type="text" list="files1" autocomplete="on"/>
+			<datalist id="files1"></datalist>
+		</div>
+		{% for fileIndex in range(5) %}
+		<div>
+			<label>Comparison File {{fileIndex}}</label>
+			<input class="inputFile" type="text" list="files{{fileIndex}}" autocomplete="on"/>
+			<datalist id="files{{fileIndex}}"></datalist>
+		</div>
+		{% endfor %}
+
+		{% for analysisMode in analysisModes %}
+			<li>{{analysisMode.name}}</li>
+		{% endfor %}
+	</div>
+</ul>
+<input type="submit" value="Start new analyse" />
+{% endblock %}
+
+{% block rigthPanel %}
+<div id="rightPanel">
+	<div id="browser">
+		<h2>Browser</h2>
+	</div>
+</div>
+{% endblock %}
