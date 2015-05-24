@@ -2,24 +2,35 @@
 {% block content %}
 <h2><i class="fa fa-arrow-circle-right"></i>Start an analyse</h2>
 <ul>
-	<div class="form">
-		<div>
-			<label>Reference File</label>
-			<input class="inputFile" type="text" list="files1" autocomplete="on"/>
-			<datalist id="files1"></datalist>
-		</div>
-		{% for fileIndex in range(5) %}
-		<div>
-			<label>Comparison File {{fileIndex}}</label>
-			<input class="inputFile" type="text" list="files{{fileIndex}}" autocomplete="on"/>
-			<datalist id="files{{fileIndex}}"></datalist>
-		</div>
-		{% endfor %}
+	<form>
+		<div class="form">
+			<div>
+				<label>Reference File</label>
+				<input class="inputFile" type="text" list="files1" autocomplete="on"/>
+				<datalist id="files1"></datalist>
+			</div>
+			{% for fileIndex in range(5) %}
+			<div>
+				<label>Comparison File {{fileIndex}}</label>
+				<input class="inputFile" type="text" list="files{{fileIndex}}" autocomplete="on"/>
+				<datalist id="files{{fileIndex}}"></datalist>
+			</div>
+			{% endfor %}
 
-		{% for analysisMode in analysisModes %}
-			<li>{{analysisMode.name}}</li>
-		{% endfor %}
-	</div>
+			<div>
+			Analyse mode:
+			{% for analysisMode in analysisModes %}
+				<div class="roundedOne">
+					<input type="radio" value="{{analysisMode.id}}" id="{{analysisMode.id}}" name="analisysMode"
+					{% if analysisMode.id == "psnr" %}
+						checked
+					{% endif %} />
+					<label for="{{analysisMode.id}}">{{analysisMode.name}}</label>
+				</div>
+			{% endfor %}
+			</div>
+		</div>
+	</form>
 </ul>
 <input type="submit" value="Start new analyse" />
 {% endblock %}
