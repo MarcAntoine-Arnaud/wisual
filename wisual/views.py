@@ -40,17 +40,6 @@ analysisModes = [
 
 @g_app.route("/")
 def index():
-<<<<<<< HEAD
-	return render_template('index.html')
-
-@g_app.route("/psnr")
-def computePsnr():
-	return render_template('psnr.html')
-
-@g_app.route("/ssim")
-def computeSsim():
-	return render_template('ssim.html')
-=======
 	return render_template('index.html', navigation=navigation)
 
 @g_app.route("/job")
@@ -69,7 +58,6 @@ def getAllResults():
 @g_app.route("/results/<path:resultFile>")
 def getResult(resultFile):
 	return render_template('result.html', navigation=navigation, resultFile=resultFile)
->>>>>>> arthur/master
 
 @g_app.route("/ls/<path:path>")
 def ls(path):
@@ -94,7 +82,3 @@ def getResultData(path):
 	output = xmltodict.parse(f, process_namespaces=False)
 	f.close()
 	return jsonify(**output)
-<<<<<<< HEAD
-=======
-
->>>>>>> arthur/master
