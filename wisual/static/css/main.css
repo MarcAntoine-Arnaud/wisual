@@ -1,3 +1,13 @@
+@font-face {
+  font-family: 'hacked';
+  src: url('../fonts/hacked.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/hacked.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/hacked.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/hacked.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/hacked.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/hacked.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
 body{
     background-color: #343838;
     color: #FFFFFF;
@@ -13,6 +23,7 @@ a{
 h1{
     margin: 0;
     padding-left: 10px;
+    padding-top: 5px;
 }
 
 h2{
@@ -36,12 +47,16 @@ h2 a{
 }
 
 #header a{
-    color:rgb(79, 165, 123) !important;
+    color: rgb(79, 165, 123) !important;
+    font-family: 'hacked', sans-serif;
+    font-size: 2em;
+    font-weight: normal;
+    vertical-align: middle;
 }
 
 #header img{
     height: 60px;
-    margin-top: 10px;
+    margin-top: 8px;
     margin-left: 10px;
 }
 
