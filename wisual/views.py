@@ -1,8 +1,17 @@
 
 import os
+import uuid
+import thread
 import xmltodict
 from wisual import g_app
-from flask import render_template, jsonify, abort
+from flask import (
+	render_template,
+	request,
+	jsonify,
+	abort,
+)
+
+from QpsnrProcessor import QpsnrProcessor
 
 navigation = [
 	{
@@ -52,6 +61,37 @@ def newJob():
 @g_app.route("/jobs")
 def listAllJobs():
 	return render_template('jobs.html', navigation=navigation)
+
+processor = None
+
+@g_app.route("/job", methods=["POST"])
+def newAnalyse():
+	args = request.get_json()
+	print args
+	analysisMode = args.get( "mode", "psnr" )
+	referenceVideo = args.get( "reference", None )
+	videos = args.get( "videos", None )
+
+	if referenceVideo == None or videos == None:
+		abort( 400 )
+
+	if not type( videos ) == list and len(video) > 0:
+		abort( 400 )
+
+	if not type( referenceVideo ) == unicode:
+		abort( 400 )
+
+	outputFile = os.path.join( "results", str(uuid.uuid4()) + ".xml" )
+
+	global processor
+	processor = QpsnrProcessor()
+	processor.analysisMode = analysisMode
+	processor.outputFile = outputFile
+	processor.referenceVideo = referenceVideo
+	processor.videos = videos
+
+	thread.start_new( processor.run, ( ) )
+	return "ok"
 
 @g_app.route("/results")
 def getAllResults():
