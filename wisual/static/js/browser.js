@@ -11,15 +11,17 @@ $.ajax("/ls")
 		$("#root ul").append( '<li><span class="browser-file"><i class="fa fa-file-o"></i>' + file + '</span></li>')
 	})
 	$("#root").append( "</ul>" );
-	$( ".browser-file" ).draggable({ /*revert: "valid", */helper: "clone" });
+	$( ".browser-file" ).draggable({ helper: "clone" });
 })
 .error( function(){
 	console.log("Error during listing on server.");
 });
 
 $( ".inputFile" ).droppable({
+	activeClass: "ui-state-hover",
+	hoverClass: "ui-state-active",
 	drop: function( event, ui ) {
-		console.log(ui.draggable.context.innerText);
+		$( this ).addClass( "ui-state-highlight" );
 		$( this ).val( ui.draggable.context.innerText );
 	}
 });
