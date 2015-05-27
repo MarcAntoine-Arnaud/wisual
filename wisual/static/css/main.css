@@ -258,6 +258,60 @@ input[type=radio] {
     background-color: #444;
 }
 
+#browser h2 {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+#browser #root ul {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+#browser span {
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border:1px solid #777;
+    border-radius:5px;
+    display:inline-block;
+    padding:3px 8px;
+    text-decoration:none
+}
+
+#browser span:hover {
+    background: rgb(79, 165, 123);
+}
+
+#browser li {
+    list-style-type:none;
+    margin:0;
+    padding:10px 5px 0 5px;
+    position:relative
+}
+
+#browser li::before,
+#browser li::after {
+    content:'';
+    left:-20px;
+    position:absolute;
+    right:auto
+}
+
+#browser li::before {
+    border-left:1px solid #777;
+    bottom:50px;
+    height:100%;
+    top:0;
+    width:1px
+}
+
+#browser li::after {
+    border-top:1px solid #777;
+    height:20px;
+    top:25px;
+    width:25px
+}
+
 @media screen and (min-width:1070px)
 {
 }

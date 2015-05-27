@@ -106,14 +106,15 @@ def getAllResults():
 def getResult(resultFile):
 	return render_template('result.html', navigation=navigation, resultFile=resultFile)
 
+@g_app.route("/ls")
 @g_app.route("/ls/<path:path>")
-def ls(path):
+def ls(path = ""):
 	files = []
 	dirs = []
 	try:
-		filesAndDirs = os.listdir("/" + path)
+		filesAndDirs = os.listdir("media/" + path)
 		for f in filesAndDirs:
-			absPath = os.path.join("/" + path, f)
+			absPath = os.path.join("media/" + path, f)
 			if os.path.isdir( absPath ):
 				dirs.append(f)
 			else:
