@@ -50,6 +50,8 @@ analysisModes = [
 	}
 ]
 
+processors = []
+
 @g_app.route("/")
 def index():
 	return render_template('index.html', navigation=navigation)
@@ -60,12 +62,13 @@ def newJob():
 
 @g_app.route("/jobs")
 def listAllJobs():
-	return render_template('jobs.html', navigation=navigation)
-
-processor = None
+	global processors
+	return render_template('jobs.html', navigation=navigation, analysisModes=analysisModes, jobs=processors)
 
 @g_app.route("/job", methods=["POST"])
 def newAnalyse():
+	global processors
+
 	args = request.get_json()
 	print args
 	analysisMode = args.get( "mode", "psnr" )
@@ -83,14 +86,15 @@ def newAnalyse():
 
 	outputFile = os.path.join( "results", str(uuid.uuid4()) + ".xml" )
 
-	global processor
 	processor = QpsnrProcessor()
 	processor.analysisMode = analysisMode
 	processor.outputFile = outputFile
 	processor.referenceVideo = referenceVideo
 	processor.videos = videos
 
-	thread.start_new( processor.run, ( ) )
+	processors.append( processor )
+
+	thread.start_new( processors[ len(processors) - 1 ].run, () )
 	return "ok"
 
 @g_app.route("/results")

@@ -1,4 +1,27 @@
 {% extends "base.html" %}
 {% block content %}
-<h2><a href="/results"><i class="fa fa-history"></i>List Analysis</h2>
+<h2><i class="fa fa-history"></i>List Analysis</h2>
+
+<div id="job-listing">
+	<table>
+		<tr>
+			<th>Mode</th>
+			<th>Reference</th>
+			<th>Result</th>
+		</tr>
+	{% for job in jobs %}
+		<tr>
+			<td>
+				{% for analysisMode in analysisModes %}
+					{% if analysisMode.id == job.analysisMode %}
+						{{ analysisMode.name }}
+					{% endif %}
+				{% endfor %}</td>
+			<td>{{job.referenceVideo}}</td>
+			<td><a href="/{{job.outputFile}}"><i class="fa fa-arrow-circle-right"></i></a></td>
+		</tr>
+	{% endfor %}
+	</table>
+</div>
+
 {% endblock %}

@@ -240,6 +240,24 @@ input[type=radio] {
     opacity: 1;
 }
 
+#job-listing table {
+    border-spacing: 0px;
+    width: 80%;
+}
+
+#job-listing th,
+#job-listing td {
+    padding: 5px;
+}
+
+#job-listing tr:nth-child(1) {
+    background-color: #222;
+}
+
+#job-listing tr:nth-child(2n) {
+    background-color: #444;
+}
+
 @media screen and (min-width:1070px)
 {
 }
