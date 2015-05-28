@@ -1,5 +1,8 @@
-
+import os
 from qpsnr import qpsnr
+from datetime import datetime
+
+currentAppDir = os.path.dirname(__file__)
 
 class QpsnrProcessor(object):
 	def __init__(self):
@@ -7,11 +10,21 @@ class QpsnrProcessor(object):
 		self.outputFile = ""
 		self.referenceVideo = ""
 		self.videos = []
+		self.startDate = datetime.now().isoformat()
+		self.endDate = ""
+		self.status = "unknown"
 
 	def run(self):
-		processor = qpsnr.Qpsnr( str(self.outputFile), str(self.referenceVideo) )
+		self.status = "processing"
+
+		referenceVideo = os.path.join( currentAppDir, "..", "media", self.referenceVideo)
+		
+		processor = qpsnr.Qpsnr( str(self.outputFile), str(referenceVideo) )
 		for video in self.videos:
-			processor.addVideo( str(video) );
+			absPathVideo = os.path.join( currentAppDir, "..", "media", video)
+			processor.addVideo( str(absPathVideo) );
 		options = {}
 		processor.initAnalyser( str(self.analysisMode), options );
 		processor.process();
+		self.status = "complete"
+		self.endDate = datetime.now().isoformat()

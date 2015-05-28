@@ -7,6 +7,8 @@
 		<tr>
 			<th>Mode</th>
 			<th>Reference</th>
+			<th>Start</th>
+			<th>End</th>
 			<th>Result</th>
 		</tr>
 	{% for job in jobs %}
@@ -18,7 +20,9 @@
 					{% endif %}
 				{% endfor %}</td>
 			<td>{{job.referenceVideo}}</td>
-			<td><a href="/{{job.outputFile}}"><i class="fa fa-arrow-circle-right"></i></a></td>
+			<td>{{job.startDate}}</td>
+			<td>{{job.endDate}}</td>
+			<td><a href="/{{job.outputFile}}"><i class="fa fa-arrow-circle-right"></i>{{job.status}}</a></td>
 		</tr>
 	{% endfor %}
 	</table>

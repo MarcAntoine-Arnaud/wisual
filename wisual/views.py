@@ -87,16 +87,11 @@ def newAnalyse():
 
 	outputFile = os.path.join( "results", str(uuid.uuid4()) + ".xml" )
 
-	referenceVideo = os.path.join( currentAppDir, "../media", referenceVideo)
-	absPathVideos = []
-	for video in videos:
-		absPathVideos.append( os.path.join( currentAppDir, "../media", video) )
-
 	processor = QpsnrProcessor()
 	processor.analysisMode = analysisMode
 	processor.outputFile = outputFile
 	processor.referenceVideo = referenceVideo
-	processor.videos = absPathVideos
+	processor.videos = videos
 
 	processors.append( processor )
 
