@@ -132,11 +132,12 @@ i{
 
 .form div input[type=text]{
     border-radius: 0px;
-	padding: 4px;
+	padding: 8px;
 	width: 20vw;
 	border: none;
 	color: #fff;
-    background-color: #242828;}
+    background-color: #242828;
+}
 
 .ui-state-hover{
     background: #646868;

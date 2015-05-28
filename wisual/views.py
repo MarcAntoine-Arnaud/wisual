@@ -13,6 +13,8 @@ from flask import (
 
 from QpsnrProcessor import QpsnrProcessor
 
+currentAppDir = os.path.dirname(__file__)
+
 navigation = [
 	{
 		"caption": "New analyse",
@@ -70,7 +72,6 @@ def newAnalyse():
 	global processors
 
 	args = request.get_json()
-	print args
 	analysisMode = args.get( "mode", "psnr" )
 	referenceVideo = args.get( "reference", None )
 	videos = args.get( "videos", None )
@@ -86,16 +87,21 @@ def newAnalyse():
 
 	outputFile = os.path.join( "results", str(uuid.uuid4()) + ".xml" )
 
+	referenceVideo = os.path.join( currentAppDir, "../media", referenceVideo)
+	absPathVideos = []
+	for video in videos:
+		absPathVideos.append( os.path.join( currentAppDir, "../media", video) )
+
 	processor = QpsnrProcessor()
 	processor.analysisMode = analysisMode
 	processor.outputFile = outputFile
 	processor.referenceVideo = referenceVideo
-	processor.videos = videos
+	processor.videos = absPathVideos
 
 	processors.append( processor )
 
 	thread.start_new( processors[ len(processors) - 1 ].run, () )
-	return "ok"
+	return jsonify(processor.__dict__)
 
 @g_app.route("/results")
 def getAllResults():
