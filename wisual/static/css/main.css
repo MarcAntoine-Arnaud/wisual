@@ -160,14 +160,37 @@ i{
     background: linear-gradient(top, #343838 0%, #141818 100%);
 }
 
+.modal-content{
+    margin-top: 120px;
+}
+
+.modal-content{
+    background-color: #343838;
+}
+
+.modal-body{
+    background-color: #343838;
+}
+
 input[type=submit]{
-	position: absolute;
-	right: 330px;
-	background-color: rgb(79, 165, 123);
+    position: absolute;
+    right: 330px;
+}
+
+.btn,
+.btn:visited,
+.btn:active,
+input[type=submit]{
+	background-color: rgb(79, 165, 123) !important;
 	border: none;
 	border-radius: 4px;
 	padding:10px;
 	cursor: pointer;
+}
+
+.btn:hover,
+input[type=submit]:hover{
+    background-color: rgb(59, 145, 103);
 }
 
 input[type=radio] {
