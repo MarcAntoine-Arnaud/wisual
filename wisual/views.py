@@ -43,11 +43,11 @@ analysisModes = [
 		"name": "SSIM"
 	},
 	{
-		"id": "avgpsnr",
+		"id": "avg_psnr",
 		"name": "Average PSNR"
 	},
 	{
-		"id": "avgssim",
+		"id": "avg_ssim",
 		"name": "Average SSIM"
 	}
 ]
